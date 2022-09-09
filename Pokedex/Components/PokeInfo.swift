@@ -8,11 +8,17 @@
 import SwiftUI
 
 struct PokeInfo: View {
+    let color: Color = Color(uiColor: UIColor(named: "ScreenColor2")!)
     var body: some View {
-        VStack {
-            TextScreen(textString: "Name: Charizard", fontSize: 34)
-            TextScreen(textString: "Type: Fire", fontSize: 30)
-        }
+        Rectangle()
+            .frame(width: 300, height: 95)
+            .foregroundColor(color)
+            .overlay {
+                VStack {
+                    TextScreen(textString: "NAME: CHARIZARD", fontSize: 30)
+                    TextScreen(textString: "TYPE: FIRE", fontSize: 28)
+                }
+            }
     }
 }
 
