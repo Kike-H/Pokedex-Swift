@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         Text("Hello Pokedex")
+            .font(.custom("Minecraft", size: 34))
             .padding()
     }
 }
