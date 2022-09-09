@@ -20,10 +20,12 @@ struct Screen: View {
     // Const
     let cornerRadius: CGFloat = 8
     let imageSize: CGFloat = 160
+    let lineWidth: CGFloat = 4
     
     // Variables
     let type: Type
     let width: CGFloat = 320
+    let colorScreen: Color = Color(uiColor: UIColor(named: "ScreenColor1")!)
     
     var height: CGFloat {
         switch type {
@@ -31,15 +33,6 @@ struct Screen: View {
             return 220
         case .text:
             return 120
-        }
-    }
-    
-    var colorScreen: Color {
-        switch type {
-        case .image:
-            return Color(uiColor: UIColor(named: "ScreenColor1")!)
-        case .text:
-            return Color(uiColor: UIColor(named: "ScreenColor2")!)
         }
     }
     
@@ -52,11 +45,12 @@ struct Screen: View {
             .foregroundColor(colorScreen)
             .overlay {
                 RoundedRectangle(cornerRadius: cornerRadius)
-                    .stroke(Color.gray, lineWidth: 6)
+                    .stroke(.black, lineWidth: lineWidth)
                     .overlay {
                         AnyView(type == .image ? AnyView(PokeImage()) : AnyView(PokeInfo()))
                     }
             }
+            .padding([.bottom, .top], 20)
     }
 }
 

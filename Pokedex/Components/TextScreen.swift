@@ -10,11 +10,12 @@ import SwiftUI
 struct TextScreen: View {
     var textString: String
     var fontSize: CGFloat
+    let color: Color = Color(uiColor: UIColor(named: "LetterScreenColor")!)
     var body: some View {
         Text(textString)
             .font(.custom("Minecraft", fixedSize: fontSize))
             .fontWeight(.bold)
-            .foregroundColor(.white)
+            .foregroundColor(color)
             .padding([.bottom], 5)
     }
 }
