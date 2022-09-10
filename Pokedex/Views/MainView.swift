@@ -13,7 +13,7 @@ struct MainView: View {
     var body: some View {
         VStack {
             HStack {
-                Led()
+                Led(state: .off)
                 Spacer()
             }
             Screen(pokemon: controller.pokemon, type: .image)
