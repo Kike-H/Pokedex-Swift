@@ -10,6 +10,7 @@ import Foundation
 final class Controller: ObservableObject {
     
     @Published var pokemon: Pokemon? = nil
+    let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     
     public func getRadomPokemon() {
         

@@ -21,6 +21,9 @@ struct MainView: View {
             Spacer()
             PokeButton(closure: controller.getRadomPokemon)
         }
+        .onReceive(controller.timer) { _ in
+            controller.getRadomPokemon()
+        }
     }
 }
 
