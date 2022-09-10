@@ -10,6 +10,7 @@ import Foundation
 final class Controller: ObservableObject {
     
     @Published var pokemon: Pokemon? = nil
+    @Published var stateLed: LedState = .off
     let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
     
     public func getRadomPokemon() {
@@ -22,6 +23,9 @@ final class Controller: ObservableObject {
                 debugPrint(error)
             }
         }
+        self.stateLed = .onChange
+        usleep(100000)
+        self.stateLed = .on
     }
     
     private func getRandomNumber() -> Int {
