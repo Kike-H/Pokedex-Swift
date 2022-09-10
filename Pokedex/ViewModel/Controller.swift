@@ -28,9 +28,8 @@ final class Controller: ObservableObject {
             }
         }
         self.playSound()
-        self.stateLed = .onChange
-        usleep(100000)
         self.stateLed = .on
+        usleep(100000)
     }
     
     private func getRandomNumber() -> Int {
