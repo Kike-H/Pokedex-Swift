@@ -21,11 +21,12 @@ struct Screen: View {
     let cornerRadius: CGFloat = 8
     let imageSize: CGFloat = 160
     let lineWidth: CGFloat = 4
-    
-    // Variables
-    let type: Type
     let width: CGFloat = 320
     let colorScreen: Color = Color(uiColor: UIColor(named: "ScreenColor1")!)
+    
+    // Variables
+    let pokemon: Pokemon?
+    let type: Type
     
     var height: CGFloat {
         switch type {
@@ -47,7 +48,7 @@ struct Screen: View {
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(.black, lineWidth: lineWidth)
                     .overlay {
-                        AnyView(type == .image ? AnyView(PokeImage()) : AnyView(PokeInfo()))
+                        AnyView(type == .image ? AnyView(PokeImage(linkImage: pokemon?.sprites.frontDefault)) : AnyView(PokeInfo(pokemon: pokemon)))
                     }
             }
             .padding([.bottom, .top], 20)
@@ -56,7 +57,7 @@ struct Screen: View {
 
 struct Screen_Previews: PreviewProvider {
     static var previews: some View {
-        Screen(type: .image)
-        Screen(type: .text)
+        Screen(pokemon: nil, type: .image)
+        Screen(pokemon: nil, type: .text)
     }
 }

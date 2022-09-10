@@ -16,8 +16,8 @@ struct MainView: View {
                 Led()
                 Spacer()
             }
-            Screen(type: .image)
-            Screen(type: .text)
+            Screen(pokemon: controller.pokemon, type: .image)
+            Screen(pokemon: controller.pokemon, type: .text)
             Spacer()
             PokeButton(closure: controller.getRadomPokemon)
         }
