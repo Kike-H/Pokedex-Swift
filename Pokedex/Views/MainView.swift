@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MainView: View {
+    
+    @StateObject var controller = Controller()
     var body: some View {
-        
         VStack {
             HStack {
                 Led()
@@ -18,7 +19,7 @@ struct MainView: View {
             Screen(type: .image)
             Screen(type: .text)
             Spacer()
-            PokeButton()
+            PokeButton(closure: controller.getRadomPokemon)
         }
     }
 }

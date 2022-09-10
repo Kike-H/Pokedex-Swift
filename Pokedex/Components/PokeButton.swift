@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct PokeButton: View {
+    let closure: () -> Void
     var body: some View {
         Button {
-            debugPrint("Getting pokemon")
+            closure()
         } label: {
             Text("SHOW POKEMON")
                 .font(.title)
@@ -27,6 +28,6 @@ struct PokeButton: View {
 
 struct PokeButton_Previews: PreviewProvider {
     static var previews: some View {
-        PokeButton()
+        PokeButton(closure: ({debugPrint("Hello Pokedex")}) )
     }
 }
