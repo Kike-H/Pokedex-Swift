@@ -18,17 +18,15 @@ struct PokeImage: View {
     
     var body: some View {
         LazyVStack {
-            withAnimation(.easeIn) {
-                Rectangle()
-                    .frame(width: width, height: height)
-                    .foregroundColor(color)
-                    .overlay {
-                        WebImage(url: URL(string: linkImage ?? ""))
-                            .resizable()
-                            .frame(width: size, height: size)
-                            .aspectRatio(contentMode: .fit)
-                    }
-            }
+            Rectangle()
+                .frame(width: width, height: height)
+                .foregroundColor(color)
+                .overlay {
+                    WebImage(url: URL(string: linkImage ?? ""))
+                        .resizable()
+                        .frame(width: size, height: size)
+                        .aspectRatio(contentMode: .fit)
+                }
         }
     }
 }
