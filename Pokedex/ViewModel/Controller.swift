@@ -6,8 +6,12 @@
 //
 
 import Foundation
+import AVFoundation
 
 final class Controller: ObservableObject {
+    
+//    var player: AVPlayer!
+    var player: AVAudioPlayer!
     
     @Published var pokemon: Pokemon? = nil
     @Published var stateLed: LedState = .off
@@ -23,6 +27,7 @@ final class Controller: ObservableObject {
                 debugPrint(error)
             }
         }
+        self.playSound()
         self.stateLed = .onChange
         usleep(100000)
         self.stateLed = .on
@@ -31,4 +36,20 @@ final class Controller: ObservableObject {
     private func getRandomNumber() -> Int {
         return Int.random(in: 1...905)
     }
+    
+    private func playSound() {
+        let url = Bundle.main.url(forResource: "beep", withExtension: "mp3")
+        guard url != nil else {
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url!)
+            player?.play()
+        }
+        catch {
+            debugPrint("something were wrong \(error)")
+        }
+    }
+    
 }
