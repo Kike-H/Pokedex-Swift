@@ -12,11 +12,11 @@ struct PokeInfo: View {
     let pokemon: Pokemon?
     
     var name: String {
-        return pokemon != nil ? "NAME: \(pokemon?.name.uppercased() ?? "NO NAME")" : ""
+        return pokemon != nil ? "NAME: \(pokemon?.name?.uppercased() ?? "NO NAME")" : ""
     }
     
     var type: String {
-        return pokemon != nil ? "TYPE: \(pokemon?.types[0].type.name.uppercased() ?? "NO TYPE")" : ""
+        return pokemon != nil ? "TYPE: \(pokemon?.types?[0].type?.name?.uppercased() ?? "NO TYPE")" : ""
     }
     
     var body: some View {

@@ -48,7 +48,7 @@ struct Screen: View {
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(.black, lineWidth: lineWidth)
                     .overlay {
-                        AnyView(type == .image ? AnyView(PokeImage(linkImage: pokemon?.sprites.frontDefault)) : AnyView(PokeInfo(pokemon: pokemon)))
+                        AnyView(type == .image ? AnyView(PokeImage(linkImage: pokemon?.sprites?.frontDefault)) : AnyView(PokeInfo(pokemon: pokemon)))
                     }
             }
             .padding([.bottom, .top], 20)
