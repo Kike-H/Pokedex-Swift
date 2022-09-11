@@ -21,8 +21,8 @@ struct SplashScreen: View {
                     Image("Logo")
                         .font(.system(size: 80))
                     Text("by Kike Hernandez")
-                        .font(.system(size: 26))
-                        .foregroundColor(.black.opacity(0.80))
+                        .font(.system(size: 20))
+                        .foregroundColor(Color(uiColor: UIColor(named: "Color")!).opacity(0.80))
                 }
                 .scaleEffect(size)
                 .opacity(opacity)
