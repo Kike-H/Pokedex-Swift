@@ -30,16 +30,16 @@ open Wordle.xcodeproj
 
 ## Usage 
 ## Images
-> ❓ This is screen represents an off pokdex
+> ❓ This is screen represents a pokedex off
 <p float="left">
-<img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmRgaExp9g5FO4cEmp3mKdLsGyQ6OXEGmVsYhsanuQld02hvfKqqGIHstDBzA8jvW4bCf1h9ZyM=w2880-h1592" alt="img1" width="250" style =/> 
+<img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmSpg7E-3j4ctzFNLu2tZdER2AvN7pkPpMQpTo2jE09RyOIgSROPr_YmTkSQcqfA25ySTlj_eVk=w2880-h1592" alt="img1" width="250" style =/> 
 </p>
 
-> ❓ This is screen represents an on pokdex that display the name of the pokemon on image and type of the pokemon.
+> ❓ This is screen represents an pokedex on that display the name of the pokemon, image and type of the pokemon.
 
 > ❗️ A new The pokemon is goin to be appear every 30 seconds or when you push the button.
 <p float="left">
-<img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmTt09ziulD43owckrLPIQ4WuBsEqjoOlPjf8JCfncLmecXio2lDeywRfOt4_MdsN9mSxtwAz-o=w2880-h1592" alt="img1" width="250" style =/> 
+<img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmQGbz0xdAFk55OzPI-2kcCBfNnPnEj1Eg3U_S9HSnU7046RND6vSqNMSgl8R_W-Acp2TQ7z3Ok=w2880-h1592" alt="img1" width="250" style =/> 
 </p>
 
 ## Contributing
