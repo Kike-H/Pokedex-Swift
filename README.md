@@ -29,7 +29,6 @@ open Pokedex.xcworkspace
 ```
 
 ## Usage 
-## Images
 > ❓ This is screen represents a pokedex off
 <p float="left">
 <img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmSpg7E-3j4ctzFNLu2tZdER2AvN7pkPpMQpTo2jE09RyOIgSROPr_YmTkSQcqfA25ySTlj_eVk=w2880-h1592" alt="img1" width="250" style =/> 
@@ -37,7 +36,7 @@ open Pokedex.xcworkspace
 
 > ❓ This is screen represents an pokedex on that display the name of the pokemon, image and type of the pokemon.
 
-> ❗️ A new The pokemon is goin to be appear every 30 seconds or when you push the button.
+> ❗️ A new pokemon is goin to be appear every 30 seconds or when you push the button.
 <p float="left">
 <img src="https://lh3.googleusercontent.com/drive-viewer/AJc5JmQGbz0xdAFk55OzPI-2kcCBfNnPnEj1Eg3U_S9HSnU7046RND6vSqNMSgl8R_W-Acp2TQ7z3Ok=w2880-h1592" alt="img1" width="250" style =/> 
 </p>
