@@ -22,10 +22,10 @@ sudo gem install cocoapods
 pod install 
 ```
 
-2. Open Wordle.xcodeproj
+2. Open Pokedex.xcworkspace
 
 ```bash
-open Wordle.xcodeproj
+open Pokedex.xcworkspace
 ```
 
 ## Usage 
