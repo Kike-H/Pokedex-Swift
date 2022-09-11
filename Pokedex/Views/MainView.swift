@@ -16,13 +16,13 @@ struct MainView: View {
                 Led(state: controller.stateLed)
                 Spacer()
             }
-            Screen(pokemon: controller.pokemon, type: .image)
-            Screen(pokemon: controller.pokemon, type: .text)
+            Screen(pokemon: controller.pokemon, type: .image, valueP: nil)
+            Screen(pokemon: controller.pokemon, type: .text, valueP: controller.valueProgressView)
             Spacer()
             PokeButton(closure: controller.getRadomPokemon)
         }
         .onReceive(controller.timer) { _ in
-            controller.getRadomPokemon()
+            controller.getNewPokemon()
         }
     }
 }

@@ -11,6 +11,9 @@ struct PokeInfo: View {
     let color: Color = Color(uiColor: UIColor(named: "ScreenColor2")!)
     let pokemon: Pokemon?
     
+    
+    var value: Float
+    
     var name: String {
         return pokemon != nil ? "NAME: \(pokemon?.name?.uppercased() ?? "NO NAME")" : ""
     }
@@ -21,12 +24,16 @@ struct PokeInfo: View {
     
     var body: some View {
         Rectangle()
-            .frame(width: 300, height: 95)
+            .frame(width: 300, height: 150)
             .foregroundColor(color)
             .overlay {
                 VStack {
-                    TextScreen(textString: name, fontSize: 30)
-                    TextScreen(textString: type, fontSize: 28)
+                    TextScreen(textString: name, fontSize: 22)
+                    TextScreen(textString: type, fontSize: 22)
+                    TextScreen(textString: "NEW POKEMON IN: ", fontSize: 20)
+                    ProgressView(value: value, total: 30.0)
+                        .progressViewStyle(LinearProgressViewStyle(tint: Color(uiColor: UIColor(named: "LetterScreenColor")!)))
+                        .padding(.horizontal, 32)
                 }
             }
     }
@@ -34,6 +41,6 @@ struct PokeInfo: View {
 
 struct PokeInfo_Previews: PreviewProvider {
     static var previews: some View {
-        PokeInfo(pokemon: nil)
+        PokeInfo(pokemon: nil, value: 0.0)
     }
 }

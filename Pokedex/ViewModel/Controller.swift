@@ -15,7 +15,8 @@ final class Controller: ObservableObject {
     
     @Published var pokemon: Pokemon? = nil
     @Published var stateLed: LedState = .off
-    let timer = Timer.publish(every: 30, on: .main, in: .common).autoconnect()
+    @Published var valueProgressView: Float = 0.0
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     public func getRadomPokemon() {
         
@@ -30,6 +31,18 @@ final class Controller: ObservableObject {
         self.playSound()
         self.stateLed = .on
         usleep(100000)
+    }
+    
+    public func getNewPokemon() {
+        addProgreessView()
+        if(self.valueProgressView == 30.0) {
+            getRadomPokemon()
+        }
+    }
+    
+    private func addProgreessView() {
+        let newValue = self.valueProgressView + 1.0
+        self.valueProgressView = self.valueProgressView != 30.0 ? newValue : 0.0
     }
     
     private func getRandomNumber() -> Int {

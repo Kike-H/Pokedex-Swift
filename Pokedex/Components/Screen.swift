@@ -27,13 +27,14 @@ struct Screen: View {
     // Variables
     let pokemon: Pokemon?
     let type: Type
+    let valueP: Float?
     
     var height: CGFloat {
         switch type {
         case .image:
             return 220
         case .text:
-            return 120
+            return 170
         }
     }
     
@@ -48,7 +49,7 @@ struct Screen: View {
                 RoundedRectangle(cornerRadius: cornerRadius)
                     .stroke(.black, lineWidth: lineWidth)
                     .overlay {
-                        AnyView(type == .image ? AnyView(PokeImage(linkImage: pokemon?.sprites?.frontDefault)) : AnyView(PokeInfo(pokemon: pokemon)))
+                        AnyView(type == .image ? AnyView(PokeImage(linkImage: pokemon?.sprites?.frontDefault)) : AnyView(PokeInfo(pokemon: pokemon, value: valueP!)))
                     }
             }
             .padding([.bottom, .top], 20)
@@ -57,7 +58,7 @@ struct Screen: View {
 
 struct Screen_Previews: PreviewProvider {
     static var previews: some View {
-        Screen(pokemon: nil, type: .image)
-        Screen(pokemon: nil, type: .text)
+        Screen(pokemon: nil, type: .image, valueP: nil)
+        Screen(pokemon: nil, type: .text, valueP: 0.0)
     }
 }
